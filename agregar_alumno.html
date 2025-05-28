@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar Prestamo</title>
+    <link rel="icon" href="logo.png" type="image/x-icon">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9e6f1;  /* Rosa pastel */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: #ffffff;
+            padding: 20px 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 450px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #f399cd;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-size: 16px;
+            font-weight: bold;
+            color: #f399cd;
+        }
+
+        /* Estilo para los campos de texto */
+        input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0 20px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        /* Campo solo lectura con fondo gris */
+        input[readonly] {
+            background-color: #f7eaf3;
+            cursor: not-allowed;
+        }
+
+        /* Botón de acción */
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #fa9ecc;  /* Rosa pastel para el botón */
+            color: white;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #e66b9b;  /* Un rosa más oscuro para el hover */
+        }
+
+        /* Mensaje de alerta */
+        .alert {
+            background-color: #72ee6e;
+            color: white;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            display: none;
+        }
+
+        .alert.success {
+            background-color: #4CAF50;
+        }
+
+        .regreso-btn {
+            background-color: #fa9ecc;  
+            color: white;
+            padding: 12px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+            display: block;
+            width: 100%;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+        }
+
+        .regreso-btn:hover {
+            background-color: #f38ab2;  
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Agregar Prestamo</h2>
+
+        <!-- Mensaje de alerta -->
+        <div id="alertBox" class="alert"></div>
+
+        <form id="prestamoForm">
+            <label for="nombre">Nombre de Alumno:</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Ingresa el nombre del alumno">
+
+            <label for="id_control">ID Control:</label>
+            <input type="text" id="id_control" name="id_control">
+
+            <label for="fecha_prestamo">Fecha de Préstamo:</label>
+            <input type="text" id="fecha_prestamo" name="fecha_prestamo">
+
+            <label for="fecha_regreso">Fecha de Regreso:</label>
+            <input type="text" id="fecha_regreso" name="fecha_regreso">
+
+            <label for="tiempo_prestado">Tiempo Prestado:</label>
+            <input type="text" id="tiempo_prestado" name="tiempo_prestado">
+
+            <label for="estado_libro">Estado del Libro:</label>
+            <input type="text" id="estado_libro" name="estado_libro">
+
+            <label for="multa">Multa:</label>
+            <input type="text" id="multa" name="multa">
+
+            <button type="button" id="agregarBtn">Agregar</button>
+        </form>
+
+        <!-- Botón Regreso -->
+        <a href="mernu.html">
+            <button class="regreso-btn">Regreso</button>
+        </a>
+    </div>
+
+    <script>
+        document.getElementById('agregarBtn').addEventListener('click', function() {
+            var form = document.getElementById('prestamoForm');
+            var formData = new FormData(form);
+
+            // Usar fetch para enviar los datos sin recargar la página
+            fetch('agregar.alumno.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.text())
+            .then(data => {
+                // Mostrar el mensaje en el alertBox
+                document.getElementById('alertBox').textContent = data;
+                document.getElementById('alertBox').style.display = 'block';
+                
+                // Limpiar el formulario si fue exitoso
+                form.reset();
+
+                // Opcional: Si la respuesta indica éxito, podrías redirigir o mostrar un mensaje específico.
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,67 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4ceef; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    flex-direction: column; /* Esto apilará los elementos de manera vertical */
+}
+
+.login-container {
+    background-color: white;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 400px; /* Ancho fijo para el cuadro */
+    text-align: left; /* Asegura que el contenido esté alineado a la izquierda */
+}
+
+h2 {
+    margin-bottom: 20px;
+    text-align: center; /* Título centrado */
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+label {
+    margin-bottom: 5px;
+}
+
+input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #e7abd5;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #d29cb3;
+}
+
+/* Estilos para el logo */
+.logo {
+    display: flex;
+    justify-content: center; /* Centra el logo */
+    margin-bottom: 20px; /* Espacio debajo del logo */
+}
+
+/* Asegura que la imagen del logo no sobrepase su contenedor */
+.logo img {
+    max-width: 100%;
+    height: auto;
+}

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="logo.png" type="image/x-icon">
+    <title>Las mujeres que aman demasiado</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+        }
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #f88cc2;
+            padding: 10px 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .navbar-left {
+            display: flex;
+            align-items: center;
+        }
+        .navbar-logo {
+            width: 50px;
+            height: 50px;
+            background-color: rgb(249, 209, 250);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 20px;
+        }
+        .navbar-logo img {
+            max-width: 40px;
+            max-height: 40px;
+        }
+        .navbar-title {
+            color: white;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+        .navbar-right .nav-button {
+            background-color: rgb(241, 207, 218);
+            color: #f88cc2;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .navbar-right .nav-button:hover {
+            background-color: #FFB6C1;
+            transform: scale(1.05);
+        }
+        .libro-container {
+            display: flex;
+            width: 80%;
+            height: calc(80vh - 70px);
+            background-color: #f7dbe4;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .libro-imagen-contenedor {
+            width: 40%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            background-color: #eecac6;
+        }
+        .libro-imagen {
+            max-width: 70%;
+            max-height: 65vh;
+            object-fit: contain;
+            border: 6px solid #FFB6C1;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        .libro-detalles {
+            width: 60%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 30px;
+            background-color: white;
+            box-shadow: -10px 0 20px rgba(0,0,0,0.1);
+        }
+        .libro-detalles h1 {
+            color: #DB7093;
+            border-bottom: 3px solid #FFB6C1;
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+            font-size: 2.2em;
+        }
+        .detalles-info {
+            margin-bottom: 25px;
+        }
+        .detalle {
+            margin-bottom: 12px;
+            padding: 10px;
+            background-color: #FFF5EE;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+        }
+        .detalle strong {
+            width: 180px;
+            color: #e790c7;
+            font-size: 1.1em;
+            margin-right: 20px;
+        }
+        .detalle span {
+            flex-grow: 1;
+            color: #333;
+        }
+        .boton-prestar {
+            align-self: flex-start;
+            padding: 15px 30px;
+            background-color: #f3add0;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 1.2em;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        .boton-prestar:hover {
+            background-color: #DB7093;
+            transform: translateY(-3px);
+            box-shadow: 0 7px 20px rgba(0,0,0,0.3);
+        }
+        @media (max-width: 768px) {
+            .libro-container {
+                flex-direction: column;
+                height: auto;
+            }
+            .libro-imagen-contenedor, 
+            .libro-detalles {
+                width: 100%;
+                padding: 20px;
+            }
+            .navbar {
+                flex-direction: column;
+                align-items: center;
+            }
+            .navbar-right {
+                margin-top: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-left">
+            <div class="navbar-logo">
+                <img src="logo.png" alt="Logo">
+            </div>
+            <div class="navbar-title">Books To Soul</div>
+        </div>
+        <div class="navbar-right">
+            <button class="nav-button" onclick="window.location.href='poesia.html'">Ir a Biblioteca</button>
+        </div>
+    </nav>
+    <div class="libro-container">
+        <div class="libro-imagen-contenedor">
+            <img id="imagen-libro" src="libros/mujeres que aman mucho.jpg" alt="Portada del Libro" class="libro-imagen">
+        </div>
+        <div class="libro-detalles">
+            <h1>Detalles del Libro</h1>
+            <div class="detalles-info">
+                <div class="detalle">
+                    <strong>Título:</strong>
+                    <span>Las mujeres que aman demasiado</span>
+                </div>
+                <div class="detalle">
+                    <strong>Codigo:</strong>
+                    <span> 5305</span>
+                </div>
+                <div class="detalle">
+                    <strong>Autor:</strong>
+                    <span>Robin Norwood</span>
+                </div>
+                <div class="detalle">
+                    <strong>Editorial:</strong>
+                    <span>VERGARA </span>
+                </div>
+                <div class="detalle">
+                    <strong>Categoría:</strong>
+                    <span>poesía</span>
+                </div>
+                <div class="detalle">
+                    <strong>Idioma:</strong>
+                    <span>Español</span>
+                </div>
+                <div class="detalle">
+                    <strong>Formato:</strong>
+                    <span>Tapa Dura</span>
+                </div>
+            </div>
+    </div>
+</body>
+</html>

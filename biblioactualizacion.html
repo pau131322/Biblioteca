@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Consultar Bibliotecarios</title>
+    <link rel="icon" href="logo.png" type="image/x-icon">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fde4f2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: #333;
+        }
+        .container {
+            background-color: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            padding: 40px;
+            text-align: center;
+            width: 500px;
+        }
+        h1 {
+            color: #e7abd5;
+            margin-bottom: 30px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #e7abd5;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #e7abd5;
+            border-radius: 5px;
+        }
+        .button {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            margin: 15px 0;
+            background-color: #e7abd5;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .button:hover {
+            background-color: #d882c4;
+        }
+        .back-btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            margin-top: 15px;
+            background-color: #f1c6e1;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            text-align: center;
+            transition: background-color 0.3s ease;
+        }
+        .back-btn:hover {
+            background-color: #f0a8c0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Consultar Bibliotecarios</h1>
+        <form action="act.biblio.php" method="POST">
+            <div class="form-group">
+                <label for="nombre">Nombre del Bibliotecario</label>
+                <input type="text" id="nombre" name="nombre" required>
+            </div>
+            <button type="submit" class="button">Buscar</button>
+        </form>
+
+        <div class="resultados">
+            <h3>Resultados:</h3>
+            <div id="resultados-container">
+                <?php if($mostrarResultados): ?>
+                <form action="act.biblio.php" method="POST">
+                    <div class="resultado-item">
+                        <label class="info-label">Nombre:</label>
+                        <input type="text" name="nuevo_nombre" value="<?php echo htmlspecialchars($nombre); ?>" required>
+                        
+                        <label class="info-label">Contraseña:</label>
+                        <input type="text" name="nueva_password" value="<?php echo htmlspecialchars($password); ?>" required>
+                        
+                        <input type="hidden" name="nombre_original" value="<?php echo htmlspecialchars($nombre); ?>">
+                        <input type="hidden" name="password_original" value="<?php echo htmlspecialchars($password); ?>">
+
+                        <button type="submit" class="button">Actualizar</button>
+                    </div>
+                </form>
+                <?php else: ?>
+                    <p>No se encontraron resultados.</p>
+                <?php endif; ?>
+            </div>
+        </div>
+
+        <a href="mernu.html" class="button">Regresar</a>
+    </div>
+</body>
+</html>

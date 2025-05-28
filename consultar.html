@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Consultar Libro</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fde4f2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: #333;
+        }
+        .container {
+            background-color: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            padding: 40px;
+            text-align: center;
+            width: 400px;
+        }
+        h1 {
+            color: #e7abd5;
+            margin-bottom: 30px;
+        }
+        .button {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            margin: 15px 0;
+            background-color: #e7abd5;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+        .button:hover {
+            background-color: #d882c4;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Consultar Libro</h1>
+        <form action="consultarlibroo.php" method="GET">
+            <input type="text" name="titulo" placeholder="Ingresa el título del libro" required>
+            <button type="submit" class="button">Consultar</button>
+        </form>
+        </form>
+        <a href="mernu.html" class="back-link">Volver al inicio</a>
+    </div>
+    </div>
+</body>
+</html>

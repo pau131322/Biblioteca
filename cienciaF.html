@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Libros de Ciencia Ficción</title>
+    <link rel="icon" href="logo.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #e7abd5;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .header {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .book-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            max-width: 1200px;
+        }
+
+        .book-card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            width: 250px;
+            transition: transform 0.3s ease;
+            text-align: center;
+            padding-bottom: 15px;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .book-card:hover {
+            transform: scale(1.05);
+        }
+
+        .book-image {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
+        .book-title {
+            margin-top: 15px;
+            font-size: 18px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .book-author {
+            color: #666;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #ffffff;
+        }
+
+        .return-btn {
+            display: inline-block;
+            background-color: white;
+            color: #e7abd5;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .return-btn:hover {
+            background-color: #ffffff;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <a href="mernu.html" class="return-btn">Regresar</a>
+        <h1>Nuestra Galería de Libros</h1>
+        <div></div>
+    </div>
+    
+    <div class="book-gallery">
+        <!-- Libro 1 -->
+        <a href="libro1.html" class="book-card">
+            <img src="libros/el gatoo.jpg" alt="Portada del Libro 1" class="book-image">
+            <div class="book-title">El gato que venía del cielo</div>
+            <div class="book-author">Hiraide Takashi</div>
+        </a>
+
+        <!-- Libro 2 -->
+        <a href="libro2.html" class="book-card">
+            <img src="libros/la ciuda.jpg" alt="Portada del Libro 2" class="book-image">
+            <div class="book-title">LA CIUDAD DE LAS ESTATUAS</div>
+            <div class="book-author">Vicente Muñoz Puelles</div>
+        </a>
+
+        <!-- Libro 3 -->
+        <a href="libro3.html" class="book-card">
+            <img src="libros/kime.webp" alt="Portada del Libro 3" class="book-image">
+            <div class="book-title">Kimetsu no Yaiba</div>
+            <div class="book-author">Koyoharu Gotouge</div>
+        </a>
+
+        <!-- Libro 4 -->
+        <a href="libro4.html" class="book-card">
+            <img src="libros/boku no hero.webp" alt="Portada del Libro 4" class="book-image">
+            <div class="book-title">My Hero Academia</div>
+            <div class="book-author">Kōhei Horikoshi</div>
+        </a>
+
+        <!-- Libro 5 -->
+        <a href="libro5.html" class="book-card">
+            <img src="libros/mi next.jpg" alt="Portada del Libro 5" class="book-image">
+            <div class="book-title">Mi nueva vida como villana</div>
+            <div class="book-author">Satoru Yamaguchi</div>
+        </a>
+    </div>
+</body>
+</html>
